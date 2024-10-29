@@ -1,63 +1,13 @@
 package com.tandemdiabetes.technicalinterview2.ui
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import com.tandemdiabetes.technicalinterview2.Emoji
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EmojisScreen() {
-
-    val sorting = remember { SortOrder.ASCENDING }
-
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text("Emojis")
-                },
-                actions = {
-                    IconButton(
-                        onClick = {
-                            // TODO Change the sorting of the list
-                        }
-                    ) {
-                        Icon(
-                            if (SortOrder.ASCENDING == sorting) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
-                            contentDescription = "Sorting"
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent)
-            )
-        }
-    ) { padding ->
-        Box(modifier = Modifier.padding(padding)) {
-            // TODO Implement a list of emojis using the "emojiList" below
-        }
-    }
 }
 
-enum class SortOrder {
-    ASCENDING,
-    DESCENDING
-}
-
-val emojiList = listOf(
+private val emojiList = listOf(
     Emoji("Grinning Face", "😀"),
     Emoji("Grinning Face with Big Eyes", "😃"),
     Emoji("Grinning Face with Smiling Eyes", "😄"),
@@ -137,4 +87,36 @@ val emojiList = listOf(
     Emoji("Anxious Face with Sweat", "😰"),
     Emoji("Sad but Relieved Face", "😥"),
     Emoji("Crying Face", "😢"),
+    Emoji("Loudly Crying Face", "😭"),
+    Emoji("Face Screaming in Fear", "😱"),
+    Emoji("Confounded Face", "😖"),
+    Emoji("Persevering Face", "😣"),
+    Emoji("Disappointed Face", "😞"),
+    Emoji("Downcast Face with Sweat", "😓"),
+    Emoji("Weary Face", "😩"),
+    Emoji("Tired Face", "😫"),
+    Emoji("Yawning Face", "🥱"),
+    Emoji("Face with Steam From Nose", "😤"),
+    Emoji("Pouting Face", "😡"),
+    Emoji("Angry Face", "😠"),
+    Emoji("Face with Symbols on Mouth", "🤬"),
+    Emoji("Smiling Face with Horns", "😈"),
+    Emoji("Angry Face with Horns", "👿"),
+    Emoji("Skull", "💀"),
+    Emoji("Skull and Crossbones", "☠️"),
+    Emoji("Pile of Poo", "💩"),
+    Emoji("Clown Face", "🤡"),
+    Emoji("Ogre", "👹"),
+    Emoji("Goblin", "👺"),
+    Emoji("Ghost", "👻"),
+    Emoji("Alien", "👽"),
+    Emoji("Alien Monster", "👾"),
+    Emoji("Robot", "🤖"),
+    Emoji("Grinning Cat", "😺"),
+    Emoji("Grinning Cat with Smiling Eyes", "😸"),
+    Emoji("Cat with Tears of Joy", "😹"),
+    Emoji("Smiling Cat with Heart-Eyes", "😻"),
+    Emoji("Cat with Wry Smile", "😼"),
+    Emoji("Kissing Cat", "😽"),
+    Emoji("Weary Cat", "🙀"),
 )
